@@ -37,6 +37,8 @@ def pose_spherical(theta, phi, radius):
 def load_blender_data(basedir, half_res=False, testskip=1):
     splits = ['train', 'val', 'test']
     metas = {}
+
+
     for s in splits:
         with open(os.path.join(basedir, 'transforms_{}.json'.format(s)), 'r') as fp:
             metas[s] = json.load(fp)

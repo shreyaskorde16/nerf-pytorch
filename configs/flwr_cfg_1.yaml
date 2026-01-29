@@ -21,7 +21,7 @@ chunk: 32768          # 1024*32 number of rays processed in parallel, decrease i
 netchunk: 65536       # 1024*64 number of pts sent through network in parallel, decrease if running out of memory')
 no_batching: false    # action='store_true', help='only take random rays from 1 image at a time')
 no_reload: false      # action='store_true', help='do not reload weights from saved ckpt')
-ft_path: none         # default=None, help='specific weights npy file to reload for coarse network')
+ft_path: null         # default=None, help='specific weights npy file to reload for coarse network')
 
 # rendering options
 N_samples: 64         # number of coarse samples per ray
@@ -54,7 +54,7 @@ half_res: false       # action='store_true', help=load blender synthetic data at
 factor: 8             # downsample factor for LLFF images
 no_ndc: false         # action='store_true', help= do not use normalized device coordinates (set for non-forward facing scenes)
 lindisp: false        # action='store_true', help= sampling linearly in disparity rather than depth
-spherify: false       # action='store_true', help= set for spherical 360 scenes
+spherify: True        # action='store_true', help= set for spherical 360 scenes
 llffhold: 8           # type=int, default=8, help= will take every 1/N images as LLFF test set, paper uses 8
 
 ## logging/saving options
