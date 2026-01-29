@@ -1,0 +1,17 @@
+Creating Nerf Blender dataset:
+
+1. Create Object in Blender
+2. Use "N" key to open blendernerf addon
+3. Select Only Train option from the button 
+3. Go to Train and Test Cameras TTC 
+4. Choose Train test camera (circular path cam for both)
+5. Click on Play TTC (This will generate the train data)
+6. Now Change the Frames number for testing Frames.
+7. Change number of end Frames (Bottom Right corner).
+8. Change number of Frames BezierCircle/dataObject properties - path Animation and frmaes for testing.
+9. Now Change the Folder Name as test_object .e.g.
+10. now You will have two Folders one is object which has test data and test_object which has Train and Train.json as test data.
+11. Go to test_object folder and Rename the train -> test and transform_train.json -> transform_test.json
+12. Copy paste test and Train.json and Name it val and val.json 
+13. Now copy test, val, transform_test.json, transform_test.json from test_object Folder to the Train object Folder
+14. Now run the Trail.py script which will rename the Folder file path in Jason and test folders

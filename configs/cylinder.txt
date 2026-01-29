@@ -1,6 +1,6 @@
-expname = cylinder
+expname = object_cylinder
 basedir = ./logs
-datadir = ./data/nerf_synthetic/cylinder
+datadir = ./data/nerf_synthetic/object_cylinder
 dataset_type = blender
 
 no_batching = True

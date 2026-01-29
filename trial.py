@@ -9,7 +9,7 @@ split = ["train", "val", "test"]
 #train_file = 'data/nerf_synthetic/cylinder/transforms_'
 
 for s in split:
-    train_file = f"data/nerf_synthetic/cylinder/transforms_{s}.json"
+    train_file = f"data/nerf_synthetic/object_cylinder/transforms_{s}.json"
     # Load the JSON file
     with open(train_file, 'r') as f:
         data = json.load(f)
@@ -31,5 +31,26 @@ for s in split:
     # Save the corrected JSON file
     with open(train_file, 'w') as f:
         json.dump(data, f, indent=4)
+
+def update_file_paths(json_file, new_folder):
+    # Load the JSON file
+    with open(json_file, 'r') as f:
+        data = json.load(f)
+
+    # Update file paths
+    for frame in data['frames']:
+        frame['file_path'] = frame['file_path'].replace('train/', f'{new_folder}/')
+
+    # Save the updated JSON file
+    with open(json_file, 'w') as f:
+        json.dump(data, f, indent=4)
+
+    print(f"Updated {json_file}: Changed file paths to {new_folder}/")
+
+# Update transform_test.json
+update_file_paths("data/nerf_synthetic/object_cylinder/transforms_test.json", 'test')
+
+# Update transform_val.json
+update_file_paths("data/nerf_synthetic/object_cylinder/transforms_val.json", 'val')
 
 print(f"File paths in {train_file} have been standardized to use forward slashes.")
