@@ -4,12 +4,12 @@ print(torch.__version__)  # Should output 1.11.0 or 2.3.0
 print(torch.cuda.is_available())  # Should output True
 print(torch.version.cuda)  # 11.3
 
-object = 'rectangle' # enter object name
+folder_name = 'square_update_v0.1' # enter object name
 
 split = ["train", "val", "test"]
 
 for s in split:
-    train_file = f"data/nerf_synthetic/object_{object}/transforms_{s}.json"
+    train_file = f"data/nerf_synthetic/{folder_name}/transforms_{s}.json"
     # Load the JSON file
     with open(train_file, 'r') as f:
         data = json.load(f)
@@ -48,9 +48,9 @@ def update_file_paths(json_file, new_folder):
     print(f"Updated {json_file}: Changed file paths to {new_folder}/")
 
 # Update transform_test.json
-update_file_paths(f"data/nerf_synthetic/object_{object}/transforms_test.json", 'test')
+update_file_paths(f"data/nerf_synthetic/{folder_name}/transforms_test.json", 'test')
 
 # Update transform_val.json
-update_file_paths(f"data/nerf_synthetic/object_{object}/transforms_val.json", 'val')
+update_file_paths(f"data/nerf_synthetic/{folder_name}/transforms_val.json", 'val')
 
 print(f"File paths in {train_file} have been standardized to use forward slashes.")
