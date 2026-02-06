@@ -1,12 +1,12 @@
-expname = object_cylinder_v0.1
+expname = cylinder_object_v0.1
 basedir = ./logs
-datadir = ./data/nerf_synthetic/cylinder_update_v0.1
+datadir = ./data/nerf_synthetic/cylinder_object_v0.1
 dataset_type = blender
 
 no_batching = True
 
 use_viewdirs = True
-
+white_bkgd = True
 lrate_decay = 500
 
 N_samples = 64
@@ -15,5 +15,5 @@ N_rand = 1024
 
 precrop_iters = 500
 precrop_frac = 0.5
-render_factor = 4
 
+render_test = True
