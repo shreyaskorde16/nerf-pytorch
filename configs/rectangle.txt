@@ -1,6 +1,6 @@
-expname = object_rectangle
+expname = rectangle_object_v0.1
 basedir = ./logs
-datadir = ./data/nerf_synthetic/object_rectangle
+datadir = ./data/nerf_synthetic/rectangle_object_v0.1
 dataset_type = blender
 
 no_batching = True
@@ -16,4 +16,6 @@ N_rand = 1024
 precrop_iters = 500
 precrop_frac = 0.5
 
-half_res = True
+render_test = True
+
+
