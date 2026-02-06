@@ -1,6 +1,6 @@
-expname = square_object_v0.3
+expname = square_object_v0.4
 basedir = ./logs
-datadir = ./data/nerf_synthetic/square_object_v0.3
+datadir = ./data/nerf_synthetic/square_object_v0.4
 dataset_type = blender
 
 no_batching = True
@@ -15,5 +15,7 @@ N_rand = 1024
 
 precrop_iters = 500
 precrop_frac = 0.5
+
+render_test = True
 
 
